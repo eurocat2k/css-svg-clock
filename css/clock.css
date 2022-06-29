@@ -37,6 +37,10 @@ body {
     height: 100%;
 }
 
+#time .clock .circle svg circle {
+    fill: transparent;
+}
+
 #time .clock .circle svg {
     stroke: rgb(26, 26, 26);
     stroke-width: 2px;
@@ -47,14 +51,12 @@ body {
     -o-transform: rotate(270deg);
 }
 
-#time .clock .circle svg circle {
-    fill: transparent;
-}
-
 #time .clock .circle svg circle:nth-child(2) {
     stroke: var(--color);
     stroke-dasharray: 226;
 }
+
+
 
 #time .clock div {
     position: absolute;
