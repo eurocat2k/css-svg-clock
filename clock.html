@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/clock.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="time">
+            <div class="clock">
+                <div class="circle" style="--color: rgb(255, 0, 0);">
+                    <svg>
+                        <circle cx="40" cy="40" r="36"/>
+                        <circle cx="40" cy="40" r="36" id="hh"/>
+                    </svg>
+                    <div class="dots hour-dot"></div>
+                    <div id="hours">
+                        00<br/><span>hours</span>    
+                    </div>
+                </div>    
+                <div class="shine">
+                    <svg>
+                        <defs>
+                            <linearGradient id="shine"
+                                x1="0%" y1="0%"
+                                x2="0%" y2="70%">
+                                <stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity=".65"/>
+                                <stop offset="90%" stop-color="rgb(255,255,255)" stop-opacity="0"/>
+                            </linearGradient>   
+                        </defs>
+                        <ellipse cx="40" cy="30" rx="28" ry="20" fill="url(#shine)"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="clock">
+                <div class="circle" style="--color: rgb(255, 174, 0);">
+                    <svg>
+                        <circle cx="40" cy="40" r="36"/>
+                        <circle cx="40" cy="40" r="36" id="mm"/>
+                    </svg>
+                    <div class="dots min-dot"></div>
+                    <div id="minutes">
+                        00<br/><span>minutes</span>    
+                    </div>
+                </div>    
+                <div class="shine">
+                    <svg>
+                        <defs>
+                            <linearGradient id="shine"
+                                x1="0%" y1="0%"
+                                x2="0%" y2="70%">
+                                <stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity=".65"/>
+                                <stop offset="90%" stop-color="rgb(255,255,255)" stop-opacity="0"/>
+                            </linearGradient>   
+                        </defs>
+                        <ellipse cx="40" cy="30" rx="28" ry="20" fill="url(#shine)"/>
+                    </svg>
+                </div>
+            </div>
+            <!-- SECONDS -->
+            <div class="clock">
+                <div class="circle" style="--color: rgb(0, 255, 4);">
+                    <svg>
+                        <circle cx="40" cy="40" r="36"/>
+                        <circle cx="40" cy="40" r="36" id="ss"/>
+                    </svg>
+                    <div class="dots sec-dot"></div>
+                    <div id="seconds">
+                        00<br/><span>seconds</span>    
+                    </div>
+                </div>    
+                <div class="shine">
+                    <svg>
+                        <defs>
+                            <linearGradient id="shine"
+                                x1="0%" y1="0%"
+                                x2="0%" y2="70%">
+                                <stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity=".65"/>
+                                <stop offset="90%" stop-color="rgb(255,255,255)" stop-opacity="0"/>
+                            </linearGradient>   
+                        </defs>
+                        <ellipse cx="40" cy="30" rx="28" ry="20" fill="url(#shine)"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="clock">
+                <div class="ampm">
+                    <div id="ap">AM</div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        // DOMs
+        let hoursDiv = document.getElementById('hours');
+        let minutesDiv = document.getElementById('minutes');
+        let secondsDiv = document.getElementById('seconds');
+        let apDiv = document.getElementById('ap');
+        let circdef = document.getElementById('hh');
+        let r = circdef.r.baseVal.value;
+        let hourdot = document.querySelector('.hour-dot');
+        let mindot = document.querySelector('.min-dot');
+        let secdot = document.querySelector('.sec-dot');
+
+        // SVG paths
+        let hh = document.getElementById('hh');
+        let mm = document.getElementById('mm');
+        let ss = document.getElementById('ss');
+        setInterval(() => {
+            // Time
+            let now = new Date();
+            let h = now.getHours();
+            let m = now.getMinutes();
+            let s = now.getSeconds();
+            let ap = h >= 12 ? "pm" : "am";
+            // set 12 hours clock
+            h = h > 12 ? h - 12 : h;
+            // Set clock values
+            hoursDiv.innerHTML = h.toString().padStart(2, "0") + "<br/><span>hours</span>";
+            minutesDiv.innerHTML = m.toString().padStart(2, "0") + "<br/><span>minutes</span>";
+            secondsDiv.innerHTML = s.toString().padStart(2, "0") + "<br/><span>seconds</span>";
+            apDiv.innerHTML = ap; 
+            // Adjust clock circle strokes
+            let d = Math.ceil(2 * r * Math.PI);
+            hh.style.strokeDashoffset = d - (d * h) / 12;
+            mm.style.strokeDashoffset = d - (d * m) / 60;
+            ss.style.strokeDashoffset = d - (d * s) / 60;
+            // Adjust dots
+            hourdot.style.transform = `rotate(${h * 30}deg)`;  // 360 / 60 = 6
+            mindot.style.transform = `rotate(${m * 6}deg)`;  // 360 / 60 = 6
+            secdot.style.transform = `rotate(${s * 6}deg)`;  // 360 / 60 = 6
+        }, 1000);
+    </script>
+</html>
