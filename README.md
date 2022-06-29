@@ -14,9 +14,25 @@ I'll try to follow the development - as it was happened at my desk - step by ste
 <a name="toc"></a>
 <h2>Table of contents</h2>
 <hr/>
-[Preparations](#preparations)
+
+- [Preparations](#preparations)
+
+- [The HTML file](#htmlfile)
+
+- [The CSS file](#cssfile)
 <hr/>
 
 <a name="preparations"></a>
 <h2>Preparations</h2>
+
 [Back](#preparations) [Top](#top)
+
+<a name="htmlfile"></a>
+<h2>The HTML file</h2>
+
+[Back](#htmlfile) [Top](#top)
+
+<a name="cssfile"></a>
+<h2>The CSS file</h2>
+
+[Back](#cssfile) [Top](#top)
