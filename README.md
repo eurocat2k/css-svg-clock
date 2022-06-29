@@ -280,4 +280,6 @@ After this you should see the following page on your browser or preview window:
 
 ![Base layout](img/phase1.png)
 
+*To be continued...*
+
 [Back](#cssfile) [Top](#top)
