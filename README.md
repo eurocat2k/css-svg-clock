@@ -659,7 +659,7 @@ To position the *dots* on the clock gauges we need to rotate CW their container 
 
         // Rotate dots
         // h = hours value
-        // 30 = 60 / 12 hours - 1 hour equals 30 degrees step CW.
+        // 30 = 360 / 12 hours - 1 hour equals 30 degrees step CW.
         dot_hour.style.transform = `rotate(${h * 30}deg)`;
         
         // m = minutes value
