@@ -409,7 +409,7 @@ In the ***.circle*** div we specify style as we add color values for SVG circle 
 ```
 **HTML code**:Add color variables for stroke and fill attributes of the circle.
 
-Having **:root { --color: <value>; --fillcolor: <value> }**, we can adjust each circle's stroke and fill color as we need. After the latter modofocations we shall obtain the [Figure 3](#fig3) page:
+Having **:root { --color: <value>; --fillcolor: <value> }**, we can adjust each circle's stroke and fill color as we need. After the latter modifications we shall obtain the [Figure 3](#fig3) page:
 
 ![Colored gauge](img/phase03.png)
 **Figure 3**: we added stroke and fill colors to the hour gauge.
