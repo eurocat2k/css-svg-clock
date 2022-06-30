@@ -1,101 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title></title>
+        <title>CSS_SVG_Clock</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/clock.css" rel="stylesheet">
     </head>
     <body>
         <div id="time">
-            <div id="time">
-                <div class="gauge">
-                    <div class="container">
-                        <div class="circle" style="--color:rgba(255, 0, 0, 0.913);--fillcolor:rgba(0, 0, 0, 1);">
-                            <svg>
-                                <circle cx="60" cy="60" r="50" id="face"/>
-                                <circle cx="60" cy="60" r="50" id="hh"/>
-                            </svg>
-                            <div class="dots hour-dot"></div>
-                        </div>
-                        <div class="shine">
-                            <svg>
-                                <defs>
-                                    <linearGradient id="shine"
-                                        x1="0%" y1="0%"
-                                        x2="0%" y2="70%">
-                                        <stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity=".65"/>
-                                        <stop offset="90%" stop-color="rgb(255,255,255)" stop-opacity="0"/>
-                                    </linearGradient>   
-                                </defs>
-                                <ellipse cx="60" cy="35" rx="28" ry="20" fill="url(#shine)"/>
-                            </svg>
-                        </div>
+            <div class="gauge">
+                <div class="container">
+                    <div class="circle" style="--color:rgba(255, 0, 0, 0.913);--fillcolor:rgba(0, 0, 0, 1);">
+                        <svg>
+                            <circle cx="60" cy="60" r="50" id="face"/>
+                            <circle cx="60" cy="60" r="50" id="hh"/>
+                        </svg>
+                        <div class="dots hour-dot"></div>
                     </div>
-                    <div class="texta" id="hour">
-                        00
-                        <span>hours</span>
+                    <div class="shine">
+                        <svg>
+                            <defs>
+                                <linearGradient id="shine"
+                                    x1="0%" y1="0%"
+                                    x2="0%" y2="70%">
+                                    <stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity=".65"/>
+                                    <stop offset="90%" stop-color="rgb(255,255,255)" stop-opacity="0"/>
+                                </linearGradient>   
+                            </defs>
+                            <ellipse cx="60" cy="35" rx="28" ry="20" fill="url(#shine)"/>
+                        </svg>
                     </div>
                 </div>
-                <div class="gauge">
-                    <div class="container">
-                        <!-- <div class="circle" style="--color:rgb(255, 183, 0);--fillcolor:rgba(100, 100, 0, 1);"> -->
-                        <div class="circle" style="--color:rgb(255, 183, 0);--fillcolor:rgba(0, 0, 0, 1);">
-                            <svg>
-                                <circle cx="60" cy="60" r="50" id="face"/>
-                                <circle cx="60" cy="60" r="50" id="mm"/>
-                            </svg>
-                            <div class="dots minute-dot"></div>
-                        </div>
-                        <div class="shine">
-                            <svg>
-                                <defs>
-                                    <linearGradient id="shine"
-                                        x1="0%" y1="0%"
-                                        x2="0%" y2="70%">
-                                        <stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity=".65"/>
-                                        <stop offset="90%" stop-color="rgb(255,255,255)" stop-opacity="0"/>
-                                    </linearGradient>   
-                                </defs>
-                                <ellipse cx="60" cy="35" rx="28" ry="20" fill="url(#shine)"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="texta" id="minute">
-                        00
-                        <span>minutes</span>
-                    </div>
+                <div class="texta" id="hour">
+                    00
+                    <span>hours</span>
                 </div>
-                <div class="gauge">
-                    <div class="container">
-                        <div class="circle" style="--color:rgb(14, 197, 14);--fillcolor:rgba(0, 0, 0, 1);">
-                            <svg>
-                                <circle cx="60" cy="60" r="50" id="face"/>
-                                <circle cx="60" cy="60" r="50" id="ss"/>
-                            </svg>
-                            <div class="dots second-dot"></div>
-                        </div>
-                        <div class="shine">
-                            <svg>
-                                <defs>
-                                    <linearGradient id="shine"
-                                        x1="0%" y1="0%"
-                                        x2="0%" y2="70%">
-                                        <stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity=".65"/>
-                                        <stop offset="90%" stop-color="rgb(255,255,255)" stop-opacity="0"/>
-                                    </linearGradient>   
-                                </defs>
-                                <ellipse cx="60" cy="35" rx="28" ry="20" fill="url(#shine)"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="texta" id="second">
-                        00
-                        <span>seconds</span>
-                    </div>
-                </div>
-                <div class="ampm">AM</div>
             </div>
+            <div class="gauge">
+                <div class="container">
+                    <!-- <div class="circle" style="--color:rgb(255, 183, 0);--fillcolor:rgba(100, 100, 0, 1);"> -->
+                    <div class="circle" style="--color:rgb(255, 183, 0);--fillcolor:rgba(0, 0, 0, 1);">
+                        <svg>
+                            <circle cx="60" cy="60" r="50" id="face"/>
+                            <circle cx="60" cy="60" r="50" id="mm"/>
+                        </svg>
+                        <div class="dots minute-dot"></div>
+                    </div>
+                    <div class="shine">
+                        <svg>
+                            <defs>
+                                <linearGradient id="shine"
+                                    x1="0%" y1="0%"
+                                    x2="0%" y2="70%">
+                                    <stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity=".65"/>
+                                    <stop offset="90%" stop-color="rgb(255,255,255)" stop-opacity="0"/>
+                                </linearGradient>   
+                            </defs>
+                            <ellipse cx="60" cy="35" rx="28" ry="20" fill="url(#shine)"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="texta" id="minute">
+                    00
+                    <span>minutes</span>
+                </div>
+            </div>
+            <div class="gauge">
+                <div class="container">
+                    <div class="circle" style="--color:rgb(14, 197, 14);--fillcolor:rgba(0, 0, 0, 1);">
+                        <svg>
+                            <circle cx="60" cy="60" r="50" id="face"/>
+                            <circle cx="60" cy="60" r="50" id="ss"/>
+                        </svg>
+                        <div class="dots second-dot"></div>
+                    </div>
+                    <div class="shine">
+                        <svg>
+                            <defs>
+                                <linearGradient id="shine"
+                                    x1="0%" y1="0%"
+                                    x2="0%" y2="70%">
+                                    <stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity=".65"/>
+                                    <stop offset="90%" stop-color="rgb(255,255,255)" stop-opacity="0"/>
+                                </linearGradient>   
+                            </defs>
+                            <ellipse cx="60" cy="35" rx="28" ry="20" fill="url(#shine)"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="texta" id="second">
+                    00
+                    <span>seconds</span>
+                </div>
+            </div>
+            <div class="ampm">AM</div>
         </div>
     </body>
     <script>
@@ -124,11 +122,23 @@
             // Hour
             h %= 12;
             h = h ? h : 12;
-            hrDiv.innerHTML = h.toString().padStart(2, "0") + "<span>hours</span>";
+            if (h < 2) {
+                hrDiv.innerHTML = h.toString().padStart(2, "0") + "<span>hour</span>";
+            } else {
+                hrDiv.innerHTML = h.toString().padStart(2, "0") + "<span>hours</span>";
+            }
             // Minute
-            mnDiv.innerHTML = m.toString().padStart(2, "0") + "<span>minutes</span>";
+            if (m < 2) {
+                mnDiv.innerHTML = m.toString().padStart(2, "0") + "<span>minute</span>";
+            } else {
+                mnDiv.innerHTML = m.toString().padStart(2, "0") + "<span>minutes</span>";
+            }
             // Second
-            scDiv.innerHTML = s.toString().padStart(2, "0") + "<span>seconds</span>";
+            if (s < 2) {
+                scDiv.innerHTML = s.toString().padStart(2, "0") + "<span>second</span>";
+            } else {
+                scDiv.innerHTML = s.toString().padStart(2, "0") + "<span>seconds</span>";
+            }
             // Adjust bars according to the current time value
             circleHH.style.strokeDashoffset = d - ((d * h) / 12);
             circleMM.style.strokeDashoffset = d - ((d * m) / 60);

@@ -60,7 +60,7 @@ First of all we create a basic HTML 5 file with all necessary elements in it.
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title></title>
+        <title>CSS_SVG_Clock</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/clock.css" rel="stylesheet">
@@ -105,73 +105,58 @@ Our clock consists of three circle gauges with text inside of each, and a label 
 ```html
         <div id="time">
             <!-- HOURS -->
-            <div class="clock">
+            <div class="gauge">
 
             </div>
             <!-- MINUTES -->
-            <div class="clock">
+            <div class="gauge">
 
             </div>
             <!-- SECONDS -->
-            <div class="clock">
+            <div class="gauge">
 
             </div>
             <!-- AM/PM -->
-            <div class="clock">
-
-            </div>
-
+            <div class="ampm">AM</div>
         </div>
 ```
 
 <a name="circles"></a>
 <h4>Step 1.2.3: add circles to each gauges - not for AM/PM indicator</h4>
 
-The **circle** classed DIVs will contain gauge's SVG elements needed to draw our clock faces.
+We define a container box to achieve the overlapping SVG layers and centered text values in the area of each circles.
+The ***.circle*** classed DIVs will contain gauge's SVG elements needed to draw our clock faces. Later we add another layer on top of ***.circle***, which will detail the shining 3D effect. Plus a toplevel layer for the text representation of the current time value with the proper unit indication as well.
 
 ```html
         <div id="time">
-
             <!-- HOURS -->
-            <div class="clock">
-                <!-- CIRCLES FOR HOURS -->
-                <div class="circle" style="--color: #f00;">
-                    <svg>
-                        <circle cx="40" cy="40" r="36"/>
-                        <circle cx="40" cy="40" r="36" id="hh"/>
-                    </svg>
+            <div class="gauge">
+                <div class="container">
+                    <div class="circle">
+                        <!-- This block will contain SVG circles -->
+                    </div>
+                    <!-- Shining layer later... -->
+                    <!-- Texta layer for time values and unit strings later... -->
                 </div>
             </div>
-
             <!-- MINUTES -->
-            <div class="clock">
-                <!-- CIRCLES FOR MINUTES -->
-                <div class="circle" style="--color: #ff0;">
-                    <svg>
-                        <circle cx="40" cy="40" r="36"/>
-                        <circle cx="40" cy="40" r="36" id="mm"/>
-                    </svg>
+            <div class="gauge">
+                <div class="container">
+                    <div class="circle">
+                    
+                    </div>
                 </div>
             </div>
-            
             <!-- SECONDS -->
-            <div class="clock">
-                <!-- CIRCLES FOR SECONDS -->
-                <div class="circle" style="--color: #0f0;">
-                    <svg>
-                        <circle cx="40" cy="40" r="36"/>
-                        <circle cx="40" cy="40" r="36" id="ss"/>
-                    </svg>
+            <div class="gauge">
+                <div class="container">
+                    <div class="circle">
+                    
+                    </div>
                 </div>
             </div>
-
             <!-- AM/PM -->
-            <div class="clock">
-                <div class="ampm">
-                    <div id="ap">AM</div>
-                </div>
-            </div>
-
+            <div class="ampm">AM</div>
         </div>
 ```
 
