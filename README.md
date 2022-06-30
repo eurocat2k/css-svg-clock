@@ -134,6 +134,10 @@ The ***.circle*** classed DIVs will contain gauge's SVG elements needed to draw 
                 <div class="container">
                     <div class="circle">
                         <!-- This block will contain SVG circles -->
+                        <svg>
+                            <circle cx="60" cy="60" r="50" id="face"/>
+                            <circle cx="60" cy="60" r="50" id="hh"/>
+                        </svg>
                     </div>
                     <!-- Shining layer later... -->
                     <!-- Texta layer for time values and unit strings later... -->
@@ -175,95 +179,73 @@ In this file we will control the display of the clock elements. Every DOM elemen
 ```css
     /* Common part begins */
     * {
-        /* simple reset... */
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        border-collapse: collapse;
     }
+
     body {
-        /* we will position our clock container to the center of the demo page */
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         min-height: 100vh;
         font-family:Verdana, Geneva, Tahoma, sans-serif;
-        background: rgba(0,0,0,1);
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: .1rem;
+        background: rgb(0, 0, 0);
     }
     /* Common part ends */
 
     /* Clock specific part begins */
     #time {
-        display: flex;        /* we define 100px artificial gaps between circles because we later would overlap each */
-        gap: 100px;           /* circles with a shining layer, therefore the container should be positioned absolute */ 
-        width: auto;          /* as a result each circle will overlap each other - avoid this we add gap between each */
-    }                         /* circles a width and some additional gap, in this case 80px + 20px = 100px */
+        display: flex;
+        /* gap: 10px; */
+        color: white;
+    }
 
-    #time .clock {
+    #time .gauge {
         position: relative;
         display: flex;
-        justify-content: center;
+        width: 120px;
+        height: 120px;
         align-items: center;
-        color: #fff;
+        justify-content: center;
+        background: rgba(119, 92, 92, 1);
+        /* background: rgba(119, 92, 92, 0); */
     }
 
-    #time .clock .circle,
-    #time .clock .shine {
-        width: 80px;                          /* set the dimension of each gauge container */
-        height: 80px;
-    }
-
-    #time .clock svg {
-        width: 100%;                          /* reduce SVG element size to fit in parent box */
-        height: 100%;
-    }
-
-    #time .clock .circle svg circle {
-        fill: transparent;                    /* we left transparent the gauge faces, but later they can be colorized... */
-    }
-
-    #time .clock .circle svg {
-        stroke: rgb(26, 26, 26);              /* add some natural color for the stroke path when it was not redrawn according to the current time values */
-        stroke-width: 2px;                    /* add some thickness for the stroke */
-        transform: rotate(270deg);            /* we're going to rotate SVG elemtn - contains our circles CW to set path's starting location at top - or North */
-        -webkit-transform: rotate(270deg);    /* if we were skip this step, the clock would show whole ours at three oclock - on the right from the center */
-        -moz-transform: rotate(270deg);       /* do not rotate CCW 90 degrees, because the direction will turn as well to CCW... which would be starnge */
-        -ms-transform: rotate(270deg);
-        -o-transform: rotate(270deg);
-    }
-
-    #time .clock .circle svg circle:nth-child(2) {
-        stroke: var(--color);                 /* the first circle will be drawn with it's default attributes, but the second one will be colored and dashOffsetted according to the current time values */
-        stroke-dasharray: 226;                /* the value of dash array would be calculated as follows: circle' radius x 2 x Math.PI and round to the nearest integer */
-    }                                         /* in our case: r = 36, 2 x 36 x Math.PI ~ 226.19 => after rounding the result will be 226 */
-                                              /* this value will cover the full length of path of the circle, so if we want to draw only a part of it, then we use a calculation below: */
-
-                                              /* if we deal with hour gauge:                                                   */
-                                              /* let dashOffset = Math.ceil(2 * radius * Math.PI);                             */
-                                              /* hourCircle.style.strokeDashoffset = dashOffset - (dashOffset * hours) / 12;   */
-                                              /* minuteCircle.style.strokeDashoffset = dashOffset - (dashOffset * hours) / 60; */
-                                              /* secondCircle.style.strokeDashoffset = dashOffset - (dashOffset * hours) / 60; */
-
-
-    #time .clock div {
+    #time .gauge .container {
         position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    #time .clock .ampm {
-        transform: translateY(-40px) translateX(-40px);
-        -webkit-transform: translateY(-40px) translateX(-40px);
-        -moz-transform: translateY(-40px) translateX(-40px);
-        -ms-transform: translateY(-40px) translateX(-40px);
-        -o-transform: translateY(-40px) translateX(-40px);
-        font-size: 1.15em;
-        font-weight: 300;
-        text-transform: uppercase;
+    #time .gauge .container .circle {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(170, 170, 170, 1);
+        /* background: rgba(170, 170, 170, 0); */
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        z-index: 10;
+        stroke: rgb(21, 21, 21);
+        stroke-width: 4px;
     }
     /* Clock specific part ends */
 ```
 
 After this you should see the following page on your browser or preview window:
 
-![Base layout](img/phase1.png)
+![Base layout](img/phase01.png)
 
 *To be continued...*
 
