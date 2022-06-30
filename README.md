@@ -461,7 +461,7 @@ In the ***.container*** DIV we create a new box after circle box classed as **.s
     ...
 ```
 
-This layer will overlap the existing circle layer - because we positioned **absolute** in the ***container*** box. First of all we create another SVG container - trim it to fit in the parent box -, then we define a vertical linear gradient from to to bottom. The starting color is white with almost half of the opacity. The ending color now is irrelevant hence its totally transparent.
+This layer will overlap the existing circle layer - because we positioned **absolute** in the ***container*** box. First of all we create another SVG container - trim it to fit in the parent box -, then we define a vertical linear gradient from top to bottom. The starting color is white with almost half of the opacity. The ending color now is irrelevant hence its totally transparent.
 
 The ellipse then applies the linear gradient as its fill pattern referencing it with its **#id**. We position the ellips at the top center of the box - a little bit off from the circle's path inward. Having all these modifications we shall obtain a page like [this](#fig4)
 
